@@ -30,7 +30,7 @@ public class TestDemo {
 		return randomNum * randomNum;
 	}
 	
-	public int getRandomInt() {
+	int getRandomInt() {
 		Random random = new Random();
 		return random.nextInt(10) + 1;
 	}

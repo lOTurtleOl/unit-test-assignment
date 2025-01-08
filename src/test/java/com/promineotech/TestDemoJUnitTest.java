@@ -16,6 +16,8 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
 import static org.junit.jupiter.params.provider.Arguments.arguments;
+import static org.mockito.Mockito.doReturn;
+import static org.mockito.Mockito.spy;
 
 /**
  * 
@@ -75,6 +77,17 @@ class TestDemoJUnitTest {
 		assertThat(testDemo.multiplyIfPositive(1, 1)).isEqualTo(2);
 	}
 	
+	@Test
+	void assertThatNumberSquaredIsCorrect() {
+		// use the testDemo object we made and wrap it in a spy so it doesn't affect the real method
+		TestDemo mockDemo = spy(testDemo);
+		// stub the random number with 5 so we know the expected result
+		doReturn(5).when(mockDemo).getRandomInt();
+		// call the method
+		int fiveSquared = mockDemo.randomNumberSquared();
+		// assert that the result is the expected value
+		assertThat(fiveSquared).isEqualTo(25);
+	}
 
 }
 
