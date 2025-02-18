@@ -57,8 +57,7 @@ class TestDemoJUnitTest {
 	}
 	
 	@Test
-	void assertThatPairsOfPositiveNumbersAreAddedCorrectly(int a, int b, int expected, boolean expectException) {
-		TestDemo testDemo = new TestDemo();
+	void assertThatPairsOfPositiveNumbersAreAddedCorrectly() {
 
         // Test cases for positive numbers
         assertThat(testDemo.addPositive(4, 5)).isEqualTo(9);
@@ -68,8 +67,7 @@ class TestDemoJUnitTest {
 	}
 	
 	@Test
-	void assertThatPairsOfPositiveNumbersAreMultipliedCorrectly(int a, int b, int expected, boolean expectException) {
-		TestDemo testDemo = new TestDemo();
+	void assertThatPairsOfPositiveNumbersAreMultipliedCorrectly() {
 		
 		// Test cases for positive numbers
 		assertThat(testDemo.multiplyIfPositive(4, 5)).isEqualTo(20);
